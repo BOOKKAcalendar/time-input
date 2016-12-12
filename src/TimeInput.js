@@ -21,7 +21,8 @@ var TimeInput = React.createClass({
     className: React.PropTypes.string,
     value: React.PropTypes.string,
     onChange: React.PropTypes.func,
-    defaultValue: React.PropTypes.string
+    defaultValue: React.PropTypes.string,
+    autoFocus: React.PropTypes.bool
   },
   render () {
     let className = 'TimeInput'
@@ -38,6 +39,7 @@ var TimeInput = React.createClass({
           onChange={this.handleChange}
           onBlur={this.handleBlur}
           onKeyDown={this.handleKeyDown}
+          autoFocus={this.props.autoFocus}
         />
       </div>
     )
