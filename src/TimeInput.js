@@ -180,6 +180,9 @@ var TimeInput = CreateReactClass({
           }
         } else {
           value = replaceCharAt(value, start, newChar)
+          if (!/^([01]\d|2[0-3])/i.test(value)) {
+            value = replaceCharAt(value, start+1, 3);
+          }
           insertion = insertion.slice(1)
           start++
         }
