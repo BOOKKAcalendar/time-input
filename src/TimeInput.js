@@ -38,6 +38,7 @@ var TimeInput = CreateReactClass({
           type='tel'
           value={this.format(this.props.value)}
           onChange={this.handleChange}
+          onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           onKeyDown={this.handleKeyDown}
           autoFocus={this.props.autoFocus}
@@ -62,6 +63,9 @@ var TimeInput = CreateReactClass({
   },
   handleBlur () {
     if (this.mounted) this.setState({ caretIndex: null })
+  },
+  handleFocus () {
+	if (this.input) this.input.setSelectionRange(0, 0);
   },
   handleEscape () {
     if (this.mounted) this.input.blur()
