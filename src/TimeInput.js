@@ -38,6 +38,7 @@ var TimeInput = React.createClass({
           value={this.format(this.props.value)}
           onChange={this.handleChange}
           onFocus={this.handleFocus}
+          onClick={this.handleFocus}
           onBlur={this.handleBlur}
           onKeyDown={this.handleKeyDown}
           autoFocus={this.props.autoFocus}
