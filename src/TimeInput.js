@@ -52,7 +52,9 @@ var TimeInput = React.createClass({
   },
   componentDidMount () {
     this.mounted = true
-	this.input.setSelectionRange(0, 0);
+    if (this.props.autoFocus) {
+      this.input.setSelectionRange(0, 0);
+    }
   },
   componentWillUnmount () {
     this.mounted = false
